@@ -1,4 +1,7 @@
 MovieCriticBackEnd::Application.routes.draw do
+  get "calificacion/crear"
+  get "usuario/registro"
+  get "usuario/inicio"
   resources :peliculas
 
   # The priority is based upon order of creation: first created -> highest priority.

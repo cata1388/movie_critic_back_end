@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116202142) do
+ActiveRecord::Schema.define(version: 20131116222036) do
+
+  create_table "calificacions", force: true do |t|
+    t.integer  "usuario_id"
+    t.integer  "pelicula_id"
+    t.text     "comentario"
+    t.float    "calificacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "peliculas", force: true do |t|
     t.string   "nombre"
@@ -21,6 +30,14 @@ ActiveRecord::Schema.define(version: 20131116202142) do
     t.text     "resumen"
     t.string   "director"
     t.string   "foto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "usuarios", force: true do |t|
+    t.string   "nombre"
+    t.string   "correo"
+    t.string   "contrasenya"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

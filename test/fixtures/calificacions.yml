@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario_id: 1
+  pelicula_id: 1
+  comentario: MyText
+  calificacion: 1.5
+
+two:
+  usuario_id: 1
+  pelicula_id: 1
+  comentario: MyText
+  calificacion: 1.5
