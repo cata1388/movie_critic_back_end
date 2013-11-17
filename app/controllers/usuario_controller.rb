@@ -13,7 +13,7 @@ class UsuarioController < ApplicationController
   def inicio
   	if request.post?
   		usuario = Usuario.where(:correo => params[:correo])
-  		if usuario.contrasenya == params[:contrasenya]
+  		if usuario and usuario.contrasenya == params[:contrasenya]
   			render json: usuario, root: true
   		else 
   			render json: {error: "Usuario o Password incorrecto"}
