@@ -12,11 +12,12 @@ class PeliculasController < ApplicationController
 
   def buscar_pelicula
     if request.post?
-      pelicula = Pelicula.where(:nombre => params[:nombre]).first
+      
+      pelicula = Pelicula.where(:nombre=> params[:nombre]).first
       if !pelicula.nil?
         render json: pelicula, root: true
       else
-        render json: {error: "La pelicula " + params[:nombre] + " no existe"}
+        render json: {error: "La pelicula #{params[:nombre]} no existe"}
       end
     end    
   end
