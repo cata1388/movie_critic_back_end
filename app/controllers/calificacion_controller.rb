@@ -1,7 +1,7 @@
 class CalificacionController < ApplicationController
   def crear
   	if request.post?
-  		calificacion = Calificacion.new(:usuario_id => params[:usuario_id], :pelicula_id => params[:pelicula_id], :comentario => params[:comentario], :calificacion => parmas[:calificacion])
+  		calificacion = Calificacion.new(:usuario_id => params[:usuario_id], :pelicula_id => params[:pelicula_id], :comentario => params[:comentario], :calificacion => params[:calificacion])
   		if calificacion.save
   			render json: calificacion, root: true
   		else
