@@ -1,4 +1,5 @@
 MovieCriticBackEnd::Application.routes.draw do
+  root :to => "peliculas#index"
   get "calificacion/crear"
   get "usuario/registro"
   get "usuario/inicio"
