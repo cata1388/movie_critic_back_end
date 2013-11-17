@@ -3,6 +3,8 @@ MovieCriticBackEnd::Application.routes.draw do
   post "calificacion/crear"
   post "usuario/registro"
   post "usuario/inicio"
+  post "peliculas/mejores"
+  post "peliculas/buscar_pelicula"
   resources :peliculas
 
   # The priority is based upon order of creation: first created -> highest priority.

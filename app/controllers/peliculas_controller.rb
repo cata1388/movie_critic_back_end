@@ -1,6 +1,26 @@
 class PeliculasController < ApplicationController
   before_action :set_pelicula, only: [:show, :edit, :update, :destroy]
 
+  def mejores
+    peliculas = Pelicula.where(:calificacion > 6)
+    if !peliculas.nil?
+      render json: peliculas, root: true     
+    else
+      render json: {error: "No hay peliculas por mostrar"}
+    end
+  end
+
+  def buscar_pelicula
+    if request.post?
+      pelicula = Pelicula.where(:nombre => params[:nombre]).first
+      if !pelicula.nil?
+        render json: pelicula, root: true
+      else
+        render json: {error: "La pelicula " + params[:nombre] + " no existe"}
+      end
+    end    
+  end
+
   # GET /peliculas
   # GET /peliculas.json
   def index
