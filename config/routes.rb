@@ -1,8 +1,8 @@
 MovieCriticBackEnd::Application.routes.draw do
   root :to => "peliculas#index"
-  get "calificacion/crear"
-  get "usuario/registro"
-  get "usuario/inicio"
+  post "calificacion/crear"
+  post "usuario/registro"
+  post "usuario/inicio"
   resources :peliculas
 
   # The priority is based upon order of creation: first created -> highest priority.
