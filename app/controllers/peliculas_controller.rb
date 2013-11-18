@@ -4,7 +4,7 @@ class PeliculasController < ApplicationController
   def mejores
     peliculas = Pelicula.where('calificacion > 6')
     if !peliculas.nil?
-      render json: peliculas, root: true     
+      render json: peliculas     
     else
       render json: {error: "No hay peliculas por mostrar"}
     end
