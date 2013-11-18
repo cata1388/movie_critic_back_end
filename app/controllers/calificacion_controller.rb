@@ -10,3 +10,4 @@ class CalificacionController < ApplicationController
   	end
   end
 end
+  
