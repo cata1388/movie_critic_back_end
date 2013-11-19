@@ -5,13 +5,13 @@ class CalificacionController < ApplicationController
   		if calificacion.save{
 				peliculas = Pelicula.where(:pelicula_id => params[:pelicula_id])
 				promedio = 0
-				cont = 0
-				peliculas.each do |x, y|
-					if(peliculas[x] == "calificacion")
-						promedio += peliculas[y]
-						cont += cont
+				peliculas.each do |pelicula|
+						promedio += pelicula.calificacion
 				end
-				promedio = promedio/cont
+				promedio = promedio/peliculas.count
+				
+				pelicula = Pelicula.find(params[:pelicula_id])
+				Pelicula.update(pelicula.id,:nombre=>pelicula.nombre, :tipo=>pelicula.tipo, :calificacion=>promedio, :anyo=>pelicula.anyo, :resumen=>pelicula.resumen, :director=>pelicula.director, :foto=>pelicula.foto)
   			render json: promedio, root: true
 			}
   		else
