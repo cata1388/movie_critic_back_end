@@ -15,7 +15,7 @@ peliculas.each do |pelicula|
  	 pelicula.calificacion = promedio
  	 Pelicula.update(pelicula.id,:nombre=>pelicula.nombre, :tipo=>pelicula.tipo, :calificacion=>promedio, :anyo=>pelicula.anyo, :resumen=>pelicula.resumen, :director=>pelicula.director, :foto=>pelicula.foto)
 
-	 render json: calificacion, root: true
+	 render json: pelicula, root: true
  	 else
  	 render json: {error: "No se pudo crear la calificacion"}
  	 end
